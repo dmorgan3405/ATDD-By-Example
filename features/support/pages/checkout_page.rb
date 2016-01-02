@@ -15,11 +15,7 @@ class CheckoutPage
   }
 
   def checkout(overrides = {})
-    checkout_data = DEFAULT_DATA.merge(overrides)
-    self.name = checkout_data['name']
-    self.address = checkout_data['address']
-    self.email = checkout_data['email']
-    self.payment_method = checkout_data['payment_method']
+    populate_page_with DEFAULT_DATA.merge(overrides)
     place_order
   end
 

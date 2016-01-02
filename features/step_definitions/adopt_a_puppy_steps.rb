@@ -34,3 +34,8 @@ end
 Then(/^I should see "([^"]*)"$/) do |expected|
   @current_page.text.should include expected
 end
+
+When(/^I checkout using:$/) do |table|
+  # table is a Cucumber::Core::Ast::DataTable
+  pending
+end

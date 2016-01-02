@@ -4,8 +4,10 @@ Feature: Adopting a puppy
   I want to adopt puppies
   So that ...
 
-  Scenario: Adopting a puppy
+  Background:
     Given I am on the puppy adoption site
+
+  Scenario: Adopting a puppy
     When I view the details of the first puppy
     And I choose to adopt the puppy
     And I enter my name "Your Name Here"
@@ -13,4 +15,12 @@ Feature: Adopting a puppy
     And I enter my email "you@example.com"
     And I choose to pay by "Credit card"
     And I choose to place my order
+    Then I should see "Thank you for adopting a puppy!"
+
+  Scenario: Adopting a puppy using a table
+    When I view the details of the first puppy
+    And I choose to adopt the puppy
+    And I checkout using:
+      | name           | address            | email           | payment_method |
+      | Your Name Here | 1151 N Marginal Rd | you@example.com | Credit card    |
     Then I should see "Thank you for adopting a puppy!"

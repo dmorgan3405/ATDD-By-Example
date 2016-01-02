@@ -30,3 +30,7 @@ end
 When(/^I choose to place my order$/) do
   on_page(CheckoutPage).place_order
 end
+
+Then(/^I should see "([^"]*)"$/) do |expected|
+  @current_page.text.should include expected
+end

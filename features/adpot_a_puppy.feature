@@ -13,3 +13,4 @@ Feature: Adopting a puppy
     And I enter my email "you@example.com"
     And I choose to pay by "Credit card"
     And I choose to place my order
+    Then I should see "Thank you for adopting a puppy!"

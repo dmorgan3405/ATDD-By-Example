@@ -38,3 +38,11 @@ end
 When(/^I checkout using:$/) do |table|
   on_page(CheckoutPage).checkout(table.hashes.first)
 end
+
+When /^I checkout$/ do
+  on_page(CheckoutPage).checkout
+end
+
+When(/^I checkout using a payment method of "([^"]*)"$/) do |payment_method|
+  on_page(CheckoutPage).checkout({'payment_method' => payment_method})
+end

@@ -36,6 +36,5 @@ Then(/^I should see "([^"]*)"$/) do |expected|
 end
 
 When(/^I checkout using:$/) do |table|
-  # table is a Cucumber::Core::Ast::DataTable
-  pending
+  on_page(CheckoutPage).checkout(table.hashes.first)
 end

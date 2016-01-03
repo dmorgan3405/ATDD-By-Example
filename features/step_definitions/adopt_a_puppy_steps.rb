@@ -46,3 +46,15 @@ end
 When(/^I checkout using a payment method of "([^"]*)"$/) do |payment_method|
   on_page(CheckoutPage).checkout({'payment_method' => payment_method})
 end
+
+When(/^I adopt puppy (\d+)$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I choose to adopt another puppy$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I choose to complete the adoption$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end

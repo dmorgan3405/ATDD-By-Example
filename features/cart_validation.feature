@@ -15,3 +15,9 @@ Feature: Shopping Cart Validation
     | Chew Toy        |
     | Travel Carrier  |
     | First Vet Visit |
+
+  Scenario: Validate cart with one puppy
+    When I adopt puppy 1
+    Then I should see "Brook" as the name for line item 1
+    And I should see "$34.95" as the subtotal for line item 1
+    And I should see "$34.95" as the total for the cart

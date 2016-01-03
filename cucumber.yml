@@ -1,0 +1,2 @@
+default: --no-source --color --format pretty
+wip: --tags @wip --no-source --color --format pretty

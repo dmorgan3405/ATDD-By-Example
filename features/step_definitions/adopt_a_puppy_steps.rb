@@ -59,3 +59,7 @@ end
 When(/^I choose to complete the adoption$/) do
   on_page(ShoppingCartPage).complete_adoption
 end
+
+Then(/^I should see "([^"]*)" as an optional accessory$/) do |accessory|
+  expect(@current_page.text).to include accessory
+end

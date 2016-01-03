@@ -3,7 +3,7 @@ Given /^I am on the puppy adoption site$/ do
 end
 
 When(/^I view the details of the first puppy$/) do
-  on_page(HomePage).view_details
+  on_page(HomePage).view_details_for(1)
 end
 
 When(/^I choose to adopt the puppy$/) do
@@ -47,14 +47,15 @@ When(/^I checkout using a payment method of "([^"]*)"$/) do |payment_method|
   on_page(CheckoutPage).checkout({'payment_method' => payment_method})
 end
 
-When(/^I adopt puppy (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I adopt puppy (\d+)$/) do |puppy_index|
+  on_page(HomePage).view_details_for(puppy_index.to_i)
+  on_page(DetailsPage).adopt_me
 end
 
 When(/^I choose to adopt another puppy$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  on_page(ShoppingCartPage).continue_shopping
 end
 
 When(/^I choose to complete the adoption$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  on_page(ShoppingCartPage).complete_adoption
 end
